@@ -165,7 +165,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `DIVEORDS`;
 CREATE TABLE `DIVEORDS` (
-  `Order_No` int(11) NOT NULL,
+  `Order_No` int(11) NOT NULL AUTO_INCREMENT,
   `Customer_No` int(11) default NULL,
   `Sale_Date` datetime default NULL,
   `Ship_Via` varchar(255) default NULL,
