@@ -122,7 +122,7 @@ constraint fk_Positions_Person_Id foreign key (Person_Id) references People (Per
 
 lock tables Positions write;
 insert into Positions (Profession_Id, Office_Id, Person_Id, Salary, Start_Date, End_Date)
-values (1,1,1,105000,'2018-04-05','2019-05-02'),(2,2,2,112000,'2018-04-08','2019-05-03'),(3,3,3,106000,'2018-04-09','2020-05-03'),(4,4,4,85000,'2018-06-08','2019-12-01'),(5,5,5,93000,'2018-07-02',null),(6,6,6,82000,'2018-08-01',null),(7,7,7,97000,'2018-08-03','2019-09-02'),(8,8,8,70000,'2018-08-09',null),(9,9,9,72000,'2018-10-02',null),(10,10,10,98000,'2018-11-02',null),(1,11,11,120000,'2018-11-02','2020-04-05'),(2,12,12,130000,'2018-11-05','2019-08-06'),(3,13,13,109000,'2018-11-08',null),(4,14,14,92000,'2018-12-04','2020-05-02'),(5,15,15,86000,'2018-12-06',null),(6,16,16,75000,'2018-12-15',null),(7,17,17,102000,'2018-12-20','2020-05-05'),(8,18,18,78500,'2019-01-02',null),(9,19,19,68000,'2019-01-10',null),(10,20,20,115000,'2019-04-03','2020-04-02'),(1,21,21,175000,'2019-04-15',null),(2,22,22,195000,'2019-06-15',null),(3,23,23,105000,'2019-08-02','2020-03-02'),(4,24,24,97000,'2019-08-15',null),(5,25,25,100000,'2019-08-16',null),(6,26,26,72000,'2019-08-16','2020-04-08'),(7,27,27,110000,'2019-09-03','2020-05-05'),(8,28,28,920000,'2019-10-02',null),(9,29,29,930000,'2020-01-02',null),(10,30,30,100000,'2020-03-02',null),(1,6,31,120000,'2017-05-30',null),(1,6,32,110000,'2014-12-03','2017-12-24'),(2,6,33,77000,'2019-05-22',null),(4,6,34,95000,'2016-10-01','2020-02-14'),(2,18,35,100000,'2020-01-17',null),(3,18,36,144000,'2013-06-06',null),(9,18,37,61000,'2011-02-15','2014-08-31'),(10,18,38,90000,'2019-05-20',null);
+values (1,1,1,105000,'2018-04-05','2019-05-02'),(2,2,2,112000,'2018-04-08','2019-05-03'),(3,3,3,106000,'2018-04-09','2020-05-03'),(4,4,4,85000,'2018-06-08','2019-12-01'),(5,5,5,93000,'2018-07-02',null),(6,6,6,82000,'2018-08-01',null),(7,7,7,97000,'2018-08-03','2019-09-02'),(8,8,8,70000,'2018-08-09',null),(9,9,9,72000,'2018-10-02',null),(10,10,10,98000,'2018-11-02',null),(1,11,11,120000,'2018-11-02','2020-04-05'),(2,12,12,130000,'2018-11-05','2019-08-06'),(3,13,13,109000,'2018-11-08',null),(4,14,14,92000,'2018-12-04','2020-05-02'),(5,15,15,86000,'2018-12-06',null),(6,16,16,75000,'2018-12-15',null),(7,17,17,102000,'2018-12-20','2020-05-05'),(8,18,18,78500,'2019-01-02',null),(9,19,19,68000,'2019-01-10',null),(10,20,20,115000,'2019-04-03','2020-04-02'),(1,21,21,175000,'2019-04-15',null),(2,22,22,195000,'2019-06-15',null),(3,23,23,105000,'2019-08-02','2020-03-02'),(4,24,24,97000,'2019-08-15',null),(5,25,25,100000,'2019-08-16',null),(6,26,26,72000,'2019-08-16','2020-04-08'),(7,27,27,110000,'2019-09-03','2020-05-05'),(8,28,28,92000,'2019-10-02',null),(9,29,29,93000,'2020-01-02',null),(10,30,30,100000,'2020-03-02',null),(1,6,31,120000,'2017-05-30',null),(1,6,32,110000,'2014-12-03','2017-12-24'),(2,6,33,77000,'2019-05-22',null),(4,6,34,95000,'2016-10-01','2020-02-14'),(2,18,35,100000,'2020-01-17',null),(3,18,36,144000,'2013-06-06',null),(9,18,37,61000,'2011-02-15','2014-08-31'),(10,18,38,90000,'2019-05-20',null);
 unlock tables;
 
 create table Openings(
@@ -136,7 +136,36 @@ constraint fk_Openings_Office_Id foreign key (Office_Id) references Offices (Off
 
 lock tables Openings write;
 insert into Openings (Profession_Id, Office_Id, Opening_Description)
-values (1,3,'Working on AWS.'),(2,4,'Building Machine Learning models.'),(2,7,'Analyzing Metrics.'),(3,8,'Building ETL pipeline.'),(3,9,'Developing in Scala.'),(6,10,'Financial and Actuarial Consulting.'),(7,2,'Analyzing merger and acquisition deals.'),(8,4,'Analyzing Financial data'),(9,8,'Testing applications.'),(10,9,'Ensuring performance throughout application lifecycle.');
+values (1,3,'Working on AWS.'),
+    (2,4,'Building Machine Learning models. '),
+    (2,7,'Analyzing Metrics.'),
+    (3,8,'Building ETL pipeline.'),
+    (3,9,'Developing in Scala.'),
+    (6,10,'Financial and Actuarial Consulting.'),
+    (7,2,'Analyzing merger and acquisition deals. '),
+    (8,4,'Analyzing Financial data'),
+    (9,8,'Testing applications.'),
+    (10,9,'Ensuring performance throughout application lifecycle.'),
+    (1,2,'Focusing on AWS Lambda Functions.'),
+    (1,3,'Developing in Java.'),
+    (1,4,'Developing in Kotlin.'),
+    (1,7,'Developing in C.'),
+    (1,8,'Developing in C#.'),
+    (1,2,'Creating database tools.'),
+    (1,3,'Developing in Python.'),
+    (1,4,'Developing Azure tools.'),
+    (1,7,'Developing back-end infrastructure tools.'),
+    (1,8,'Developing in C++.'),
+    (1,8,'Developing infrastructure platforms.'),
+    (2,8,'Building time-series models.'),
+    (3,8,'Developing pipelines on Azure. '),
+    (4,2,'Creating monetization metrics.'),
+    (5,3,'Working with clients on building solutions.'),
+    (6,4,'Social Consulting.'),
+    (7,7,'Working on healthcare acquisitions.'),
+    (8,7,'Creating forecasting models.'),
+    (9,4,'Testing APIs.'),
+    (10,7,'Creating performance metrics.');
 unlock tables;
 
 create table Applications (
