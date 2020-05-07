@@ -1,0 +1,21 @@
+<html>
+<head><title>INFO 257 workshop show data</title>
+</head>
+
+<body>
+	<table class="table">
+		<tr>
+			<th>Customer Name</th>
+			<th>City</th>
+			<th>State</th>
+		</tr>
+			{% for ui_row in customers %}
+		<tr>
+			<td>{{ ui_row.Cust_Name }}</td>
+			<td>{{ ui_row.City }}</td>
+			<td>{{ ui_row.State }}</td>
+		</tr>
+			{% endfor %}
+	</table>
+</body>
+</html>

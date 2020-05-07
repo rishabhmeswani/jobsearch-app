@@ -1,0 +1,112 @@
+<html>
+<head>
+
+
+  <!-- Create our own custom CSS -->
+<style>
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
+body{
+    text-align: center;
+    background-color: lightblue;
+}
+h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: normal;
+    color: #8ac640;
+    font-size: 2.5em;
+}
+</style>
+
+
+
+ <title>UC Berkeley Alumni Network</title>
+ <meta charset="utf-8">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library: Supports Javascript Plugins -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <h1>UC Berkeley Alumni Network</h1>
+
+
+  <p>Select from the options below:</p>
+
+
+
+
+ <!-- <div class="row">
+   <div class="col-sm-4">
+     <form method="POST" action="/customers">
+
+      <div class="form-group">
+        <input type="submit" value="List Customers" />
+      </div>
+    </form>
+  </div> -->
+
+
+   <!-- <div class="col-sm-4"> -->
+     <!-- <form method="POST" action="/destinations">
+     <div class="form-group">
+       <input type="submit" value="List Destinations" />
+     </div>
+   </form> -->
+ <!-- </div> -->
+
+
+   <div class="col-sm-3">
+     <form method="GET" action="/destinations">
+    	<label for="search">Find Openings by Profession Type</label>
+      	<select id="accomodations" name="accomodations">
+    		    {% for ui_row in data %}
+        		<option value="{{ui_row.Accomodations}}">{{ui_row.Accomodations}}</option>
+    	    	{% endfor %}
+        	</select>
+       	<input type="submit" value="Submit" />
+    </form>
+  </div>
+
+
+
+  <div class="col-sm-3">
+    <form method="GET" action="/customers">
+     <label for="search">Find Average Salary by Profession Type</label>
+       <select id="accomodations" name="accomodations">
+           {% for ui_row in data %}
+           <option value="{{ui_row.Accomodations}}">{{ui_row.Accomodations}}</option>
+           {% endfor %}
+         </select>
+       <input type="submit" value="Submit" />
+   </form>
+   </div>
+
+
+   <br>
+  <div class="col-sm-6">
+  <form method="GET" action="/destinations_two">
+  	<label for="search">Find out who works where</label>
+  	<input id="search" name="search" class="form-control" type="text" /><br />
+  </form>
+
+ </div>
+
+ <br>
+
+ </div>
+
+ <br>
+
+
+</body>
+
+</html>
