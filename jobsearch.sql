@@ -141,16 +141,18 @@ unlock tables;
 
 create table Applications (
 Applications_Id int not null auto_increment primary key,
-Opening_Id int not null,
+Office_Id int not null,
+Profession_Id int not null,
 Person_Id int not null,
 Offer binary not null,
 Accepted binary not null,
 Years_Of_Experience smallint not null,
-constraint fk_Applications_Opening_Id foreign key (Opening_Id) references Openings (Opening_Id),
+constraint fk_Applications_Office_Id foreign key (Office_Id) references Offices (Office_Id),
+constraint fk_Applications_Profession_Id foreign key (Profession_Id) references Professions (Profession_Id),
 constraint fk_Applications_Person_Id foreign key (Person_Id) references People (Person_Id)
 );
 
 lock tables Applications write;
-insert into Applications (Opening_Id, Person_Id, Offer, Accepted, Years_Of_Experience)
-values (1,40,1,1,5),(2,41,0,0,7),(3,42,1,0,2),(4,43,0,0,10),(5,44,1,1,15),(6,45,0,0,13),(7,46,1,1,0),(8,47,0,0,8),(9,48,1,1,1),(10,49,1,1,5);
+insert into Applications (Office_Id, Profession_Id, Person_Id, Offer, Accepted, Years_Of_Experience)
+values (3,1,40,1,1,5),(4,2,41,0,0,7),(7,2,42,1,0,2),(8,3,43,0,0,10),(9,3,44,1,1,15),(10,6,45,0,0,13),(2,7,46,1,1,0),(4,8,47,0,0,8),(8,9,48,1,1,1),(9,10,49,1,1,5);
 unlock tables;
