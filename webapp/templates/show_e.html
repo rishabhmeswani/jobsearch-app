@@ -8,10 +8,10 @@
 			<th>Profession Type</th>
 			<th>Salary</th>
 		</tr>
-			{% for ui_row in customers %}
+			{% for ui_row in data %}
 		<tr>
-			<td>{{ ui_row.Dest_Name }}</td>
-			<td>{{ ui_row.Dest_Price }}</td>
+			<td>{{ ui_row.Profession_Type }}</td>
+			<td>{{ ui_row.Salary}}</td>
 		</tr>
 			{% endfor %}
 	</table>

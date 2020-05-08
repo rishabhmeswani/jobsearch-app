@@ -1,20 +1,14 @@
 <html>
+
 <head>
 
 
-  <!-- Create our own custom CSS -->
 <style>
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC:700);
-body{
-    text-align: center;
-    background-color: lightblue;
-}
-h1{
-    font-family: 'Amatic SC', cursive;
-    font-weight: normal;
-    color: #8ac640;
-    font-size: 2.5em;
-}
+
+
+body {text-align: center; background-color: lightblue;}
+
+
 </style>
 
 
@@ -36,54 +30,32 @@ h1{
 
 <body>
 
-  <h1>UC Berkeley Alumni Network</h1>
+  <h1 style = "color: blue;"> UC Berkeley Alumni Network</h1>
 
+  <p style = "border: 3px solid Gold;"> Welcome to UC Berkeley's Alumni Network Page! Select from the options below:</p>
 
-  <p>Select from the options below:</p>
-
-
-
-
- <!-- <div class="row">
-   <div class="col-sm-4">
-     <form method="POST" action="/customers">
-
-      <div class="form-group">
-        <input type="submit" value="List Customers" />
-      </div>
-    </form>
-  </div> -->
-
-
-   <!-- <div class="col-sm-4"> -->
-     <!-- <form method="POST" action="/destinations">
-     <div class="form-group">
-       <input type="submit" value="List Destinations" />
-     </div>
-   </form> -->
- <!-- </div> -->
 
 
    <div class="col-sm-3">
-     <form method="GET" action="/destinations">
-    	<label for="search">Find Openings by Profession Type</label>
-      	<select id="accomodations" name="accomodations">
-    		    {% for ui_row in data %}
-        		<option value="{{ui_row.Accomodations}}">{{ui_row.Accomodations}}</option>
-    	    	{% endfor %}
-        	</select>
-       	<input type="submit" value="Submit" />
+     <form method="GET" action="/openings">
+      <label for="search">Find Openings by Profession Type</label>
+        <select id="opening" name="opening">
+            {% for ui_row in data %}
+            <option value="{{ui_row.menu}}">{{ui_row.menu}}</option>
+            {% endfor %}
+          </select>
+        <input type="submit" value="Submit" />
     </form>
   </div>
 
 
 
   <div class="col-sm-3">
-    <form method="GET" action="/customers">
+    <form method="GET" action="/salary">
      <label for="search">Find Average Salary by Profession Type</label>
-       <select id="accomodations" name="accomodations">
+       <select id="salary" name="salary">
            {% for ui_row in data %}
-           <option value="{{ui_row.Accomodations}}">{{ui_row.Accomodations}}</option>
+           <option value="{{ui_row.menu}}">{{ui_row.menu}}</option>
            {% endfor %}
          </select>
        <input type="submit" value="Submit" />
@@ -93,9 +65,9 @@ h1{
 
    <br>
   <div class="col-sm-6">
-  <form method="GET" action="/destinations_two">
-  	<label for="search">Find out who works where</label>
-  	<input id="search" name="search" class="form-control" type="text" /><br />
+  <form method="GET" action="/company">
+    <label for="search">Find out who works where</label>
+    <input id="search" name="search" class="form-control" type="text" /><br />
   </form>
 
  </div>
